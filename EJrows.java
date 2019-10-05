@@ -8,7 +8,7 @@ public class EJrows implements Runnable{
     int[][] nums;
 
     public EJrows(EJresult result, int[][] nums)
-    {
+    {                                                   //constructor
         this.result = result;
         this.nums = nums;
     }
@@ -16,25 +16,38 @@ public class EJrows implements Runnable{
 
     public void run()
     {
-        ArrayList <Integer> goal = new ArrayList();
+        ArrayList<Integer> goal = new ArrayList();
         ArrayList <Integer> curr = new ArrayList();
+        int flag= 0;
 
-        for(int i = 0; i<9;i++)
+        for(int x = 0; x<9 ; x++)       //for each row
         {
+            curr.clear();
+            goal.clear();
+            for(int i = 0; i<9;i++)
+            {
 
-         curr.add(nums[1][i]);
-         goal.add(i+1);
+                curr.add(nums[x][i]);  //adding the numbers from a column to the list, and creating goal list
+                goal.add(i+1);
+
+            }
+            Collections.sort(curr);  //sorting lists
+            if(!curr.equals(goal))  //If they do not match then the sudoku is invalid
+            {
+                flag = 1;
+            }
+
 
         }
 
-        Collections.sort(curr);
-       if(curr.equals(goal))
-       {
-           result.setValue(1);
-       }
-       else
-           result.setValue(0);
 
+
+        if(flag == 0)
+        {
+            result.setValue(1); //returning values
+        }
+        else
+            result.setValue(0);
 
 
     }

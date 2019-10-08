@@ -1,19 +1,24 @@
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.File;
+
+
 public class EJmain {
-    public static void main(String [] args)
+    public static void main(String [] args) throws FileNotFoundException
     {
 
-        //int n = Integer.parseInt(args[0]);
-        int[][] nums = {
-                {5, 3, 4, 6, 7, 8, 9, 1, 2},
-                {6, 7, 2, 1, 9, 5, 3, 4, 8},
-                {1, 9, 8, 3, 4, 2, 5, 6, 7},
-                {8, 5, 9, 7, 6, 1, 4, 2, 3},
-                {4, 2, 6, 8, 5, 3, 7, 9, 1},
-                {7, 1, 3, 9, 2, 4, 8, 5, 6},
-                {9, 6, 1, 5, 3, 7, 2, 8, 4},
-                {2, 8, 7, 4, 1, 9, 6, 3, 5},
-                {3, 4, 5, 2, 8, 6, 1, 7, 9}
-        };
+        //int [][] nums = Integer.parseInt(args[0]);
+        int [][] nums = new int[9][9];
+        Scanner scan = new Scanner(new File("incorrect_puzzle.txt"));
+        for(int i = 0; i < 9 ; i++)
+        {
+            for(int j = 0; j<9 ; j++)
+            {
+                nums[i][j] = scan.nextInt();
+            }
+        }
+
+
 
         EJresult rRows = new EJresult();
 

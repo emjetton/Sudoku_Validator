@@ -7,9 +7,9 @@ public class EJmain {
     public static void main(String [] args) throws FileNotFoundException
     {
 
-        //int [][] nums = Integer.parseInt(args[0]);
+        //int num = Integer.parseInt(args[0]);
         int [][] nums = new int[9][9];
-        Scanner scan = new Scanner(new File("incorrect_puzzle.txt"));
+        Scanner scan = new Scanner(new File("correct_puzzle.txt"));
         for(int i = 0; i < 9 ; i++)
         {
             for(int j = 0; j<9 ; j++)

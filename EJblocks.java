@@ -25,21 +25,26 @@ public class EJblocks implements Runnable {
             goal.add(i+1);
 
         }
-    for(int k = 0; k<3; k++)
-    {
-        curr.clear();
+        for(int k = 0; k<7; k+=3) { //row
+            for (int g = 0; g < 7; g+=3) { //col
+                for (int i = k; i <k+3; i++) { //row,
+                    for (int c = g; c < g+3; c++) { //col,
+                        curr.add(nums[i][c]);
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {           //for each block
-                curr.add(nums[i][j]);
+                    }
+                }
+
+                System.out.println(curr);
+
+
+                Collections.sort(curr);                     //sorting lists
+
+                if (!curr.equals(goal)) {                   //If they do not match then the sudoku is invalid
+                    flag = 1;
+                }
+                curr.clear();
             }
         }
-
-        Collections.sort(curr);                     //sorting lists
-        if (!curr.equals(goal)) {                   //If they do not match then the sudoku is invalid
-            flag = 1;
-        }
-    }
 
         if(flag == 0)
         {

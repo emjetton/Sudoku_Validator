@@ -25,7 +25,7 @@ public class EJblocks implements Runnable {
             goal.add(i+1);
 
         }
-        for(int k = 0; k<7; k+=3) { //row
+        for(int k = 0; k<7; k+=3) { //row 0,3,6
             for (int g = 0; g < 7; g+=3) { //col
                 for (int i = k; i <k+3; i++) { //row,
                     for (int c = g; c < g+3; c++) { //col,
